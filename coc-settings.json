@@ -1,0 +1,40 @@
+{
+    "eslint.autoFixOnSave": true,
+    "prettier.disableSuccessMessage": true,
+    
+    //"coc.preferences.formatOnSaveFiletypes": [
+    //"javascript",
+    //"javascriptreact",
+    //"typescript",
+    //"typescriptreact"
+    //],
+    //"tsserver.formatOnType": true,
+    //"coc.preferences.formatOnType": true
+    "languageserver": {
+      "ccls": {
+        "command": "ccls",
+        "args": ["--log-file=/tmp/ccls.log", "-v=1"],
+        "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+        "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+        "initializationOptions": {
+           "cache": {
+             "directory": "/tmp/ccls"
+           },
+           "client": {
+            "snippetSupport": true
+           }
+         }
+      },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    }
+  },
+  "phpls.path": "/home/vpd/.yarn/bin/intelephense",
+  "explorer.width": 30,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.file.reveal.auto": false,
+  "explorer.previewAction.onHover": false,
+  "explorer.icon.enableNerdfont": true
+}
