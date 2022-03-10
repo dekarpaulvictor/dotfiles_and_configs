@@ -43,7 +43,7 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'pseewald/vim-anyfold'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go' ", { 'do': ':GoUpdateBinaries' }
 Plug 'mfussenegger/nvim-dap'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'theHamsta/nvim-dap-virtual-text'
@@ -51,8 +51,10 @@ Plug 'romgrk/nvim-treesitter-context'
 Plug 'andymass/vim-matchup'
 Plug 'folke/zen-mode.nvim'
 Plug 'folke/twilight.nvim'
+Plug 'wfxr/minimap.vim'
 
 call plug#end()
+
 
 if has('termguicolors')
   set termguicolors
@@ -191,7 +193,7 @@ vnoremap / /\v
 set hlsearch
 set incsearch
 set showmatch
-map <leader><space> :let @/=''<cr> " clear search
+map <leader><space> :let @/=''<cr>:call minimap#vim#ClearColorSearch()<CR> " clear search
 
 " Remap help key.
 inoremap <F1> <ESC>:set invfullscreen<CR>a
@@ -213,7 +215,11 @@ nnoremap <silent> <Leader>- :exe "vertical resize -5"<CR>
 nmap <leader>w :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 " }}}
-
+"
+"{{{============== Minimap Config =================
+nnoremap <leader>mm :MinimapToggle<CR>
+"}}}
+"
 " {{{ ======== PHP Intelephense settings ===========
 
 if executable('intelephense')
@@ -467,6 +473,8 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 "{{{ ========== dart-vim-plugin
 let g:dart_style_guide = 2
+let dart_html_in_string=v:true
+let g:dart_format_on_save = 1
 
 "}}}
 
@@ -517,7 +525,7 @@ require'nvim-treesitter.configs'.setup {
   "ledger", "supercollider", "heex", "godot_resource", "fennel", "glimmer",
   "teal", "d", "hjson", "gomod", "verilog", "pioasm", "zig", "devicetree",
   "gdscript", "yang", "hocon", "surface", "dot", "eex", "ocamllex", "tlaplus",
-  "elm", "rasi", "hcl", "gowork", "norg" },
+  "elm", "rasi", "hcl", "gowork", "norg", "vala" },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
