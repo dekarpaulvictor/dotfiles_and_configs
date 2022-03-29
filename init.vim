@@ -525,7 +525,7 @@ require'nvim-treesitter.configs'.setup {
   "ledger", "supercollider", "heex", "godot_resource", "fennel", "glimmer",
   "teal", "d", "hjson", "gomod", "verilog", "pioasm", "zig", "devicetree",
   "gdscript", "yang", "hocon", "surface", "dot", "eex", "ocamllex", "tlaplus",
-  "elm", "rasi", "hcl", "gowork", "norg", "vala" },
+  "elm", "rasi", "hcl", "gowork", "norg", "vala", "cooklang" },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
