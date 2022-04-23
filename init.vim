@@ -519,7 +519,15 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = "maintained",
+  ensure_installed = { "lua", "perl", "erlang", "json5", "elixir", "yaml", "gleam", "cpp", "http",
+  "julia", "nix", "prisma", "c_sharp", "scala", "typescript", "css", "r",
+  "haskell", "php", "query", "javascript", "pug", "go", "jsonc", "dockerfile",
+  "html", "ninja", "scheme", "astro", "elvish", "rst", "solidity", "lalrpop",
+  "ql", "rego", "make", "llvm", "json", "vim", "clojure", "bash", "commonlisp",
+  "comment", "toml", "java", "cuda", "swift", "latex", "fish", "svelte", "tsx",
+  "turtle", "rust", "jsdoc", "fusion", "regex", "vue", "pascal", "markdown", "c",
+  "python", "dart", "kotlin", "bibtex", "eex", "graphql", "fortran", "scss",
+  "ruby", "cmake" },
 
   ignore_install = { "ocaml_interface", "beancount", "sparql", "ocaml", "glsl",
   "ledger", "supercollider", "heex", "godot_resource", "fennel", "glimmer",
