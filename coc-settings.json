@@ -1,6 +1,5 @@
 {
     "eslint.autoFixOnSave": true,
-    "prettier.disableSuccessMessage": true,
     
     //"coc.preferences.formatOnSaveFiletypes": [
     //"javascript",
