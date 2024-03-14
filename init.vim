@@ -53,6 +53,7 @@ Plug 'wfxr/minimap.vim'
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'leafOfTree/vim-svelte-plugin'
+Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 
 call plug#end()
 
@@ -630,21 +631,21 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = { "lua", "perl", "erlang", "json5", "elixir", "yaml", "gleam", "cpp", "http",
+  ensure_installed = { "lua", "perl", "erlang", "json5", "elixir", "yaml", "cpp", "http",
   "julia", "nix", "prisma", "c_sharp", "scala", "typescript", "css", "r",
   "haskell", "php", "query", "javascript", "pug", "go", "jsonc", "dockerfile",
-  "html", "ninja", "scheme", "astro", "elvish", "rst", "solidity", "lalrpop",
-  "ql", "rego", "make", "llvm", "json", "vim", "clojure", "bash", "commonlisp",
+  "html", "ninja", "scheme", "rst", "make", "llvm", "json", "vim", "clojure", "bash", "commonlisp",
   "comment", "toml", "java", "cuda", "swift", "latex", "fish", "svelte", "tsx",
   "turtle", "rust", "jsdoc", "fusion", "regex", "vue", "pascal", "markdown", "c",
-  "python", "dart", "kotlin", "bibtex", "eex", "graphql", "fortran", "scss",
+  "python", "dart", "kotlin", "bibtex", "graphql", "fortran", "scss",
   "ruby", "cmake" },
 
   ignore_install = { "ocaml_interface", "beancount", "sparql", "ocaml", "glsl",
   "ledger", "supercollider", "heex", "godot_resource", "fennel", "glimmer",
   "teal", "d", "hjson", "gomod", "verilog", "pioasm", "zig", "devicetree",
   "gdscript", "yang", "hocon", "surface", "dot", "eex", "ocamllex", "tlaplus",
-  "elm", "rasi", "hcl", "gowork", "norg", "vala", "cooklang" },
+  "elm", "rasi", "hcl", "gowork", "norg", "vala", "cooklang", "gleam", "astro", "elvish",
+  "solidity", "lalrpop", "ql", "rego", "eex" },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
